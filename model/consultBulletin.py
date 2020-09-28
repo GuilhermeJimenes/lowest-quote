@@ -23,5 +23,4 @@ def consultBulletin(driver, date_Formated, jumps):
         if item == 'USD':  # pega o valor do Dolar
             usd_buy = quote
 
-    print("valor final: ", lowestQuote_buy)
     return lowestQuote_buy, usd_buy, lowestQuota_symbol
