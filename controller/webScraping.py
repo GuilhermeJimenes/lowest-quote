@@ -6,9 +6,9 @@ from view.show import show
 
 
 def webScraping():
-    date_Formated = Insertion()
+    year, month, day = Insertion()
     driver = Chrome()
-    lowestQuota_usd, lowestQuota_symbol = consultController(driver, date_Formated)
+    lowestQuota_usd, lowestQuota_symbol = consultController(driver, year, month, day)
     countrie = consultCountrie(lowestQuota_symbol)
     show(lowestQuota_symbol, countrie, lowestQuota_usd)
     finish(driver)

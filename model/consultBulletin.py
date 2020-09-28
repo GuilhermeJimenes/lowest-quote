@@ -1,4 +1,5 @@
 import requests
+from decimal import Decimal
 
 
 # Segunda pagina
@@ -10,16 +11,17 @@ def consultBulletin(driver, date_Formated, jumps):
     table = table.text.replace(date_Formated, '').replace(',', '.').split(';')
 
     lowestQuota_symbol = 'x'
-    lowestQuota_buy = 'inf'
+    lowestQuote_buy = Decimal('inf')
     usd_buy = '1'
 
     # Tratando dados
     for item in table[3::jumps]:
-        buy = table[table.index(item) + 1]
-        if lowestQuota_buy > buy:  # pega a moeda com menor cotação e seu simbolo
-            lowestQuota_buy = buy
+        quote = Decimal(table[table.index(item) + 1])
+        if lowestQuote_buy > quote:  # pega a moeda com menor cotação e seu simbolo
+            lowestQuote_buy = quote
             lowestQuota_symbol = item
         if item == 'USD':  # pega o valor do Dolar
-            usd_buy = buy
+            usd_buy = quote
 
-    return lowestQuota_buy, usd_buy, lowestQuota_symbol
+    print("valor final: ", lowestQuote_buy)
+    return lowestQuote_buy, usd_buy, lowestQuota_symbol
