@@ -22,14 +22,17 @@ No terminal é preciso baixar as dependências com o seguinte comando:
 pip install - r requirements.txt
 ```
 
-Se estiver usando outra ide que não seja o pycharm vai preciso ativar a venv e interpretador manualmente antes de 
+Se estiver usando outra ide que não seja o pycharm vai ser preciso ativar a venv e interpretador manualmente antes de 
 rodar o comando a cima, consulte a documentação oficial do python se for o seu caso
 
 ## ⚙️ Começando
 
 * Antes de começar a utilizar esse projeto precisamos entender como ele funciona e é bem simples
-* Ao rodar o arquivo local.py você inicia o servidor flask, com isso todos os endpoints ficam disponíveis para serem 
+* Ao rodar o arquivo local.py você inicia o servidor, com isso todos os endpoints ficam disponíveis para serem 
 consumidos.
+* O passo anterior, além de iniciar o servidor, também fornece um Swagger, para facilitar os testes, além é claro de 
+ser uma ótima documentação, por padrão fica disponivel na url [http://127.0.0.1:5000](http://127.0.0.1:5000) 
+após iniciar o servidor
 
 ## 🛠️ Construído com
 
